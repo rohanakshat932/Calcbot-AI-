@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us - Calcbot AI{% endblock %}
+
+{% block content %}
+<!-- Contact Section -->
+<section class="section-spacing">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="mb-4">Contact Us</h1>
+                <p class="lead">Have questions or feedback? We'd love to hear from you!</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-dark-subtle">
+                    <div class="card-body p-4">
+                        <form action="{{ url_for('contact') }}" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marker-alt fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title">Location</h4>
+                        <p class="card-text">123 Math Avenue, Algorithm City, TC 98765</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title">Email</h4>
+                        <p class="card-text">support@calcbotai.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-phone fa-3x mb-3 text-primary"></i>
+                        <h4 class="card-title">Phone</h4>
+                        <p class="card-text">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section-spacing bg-dark">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Frequently Asked Support Questions</h2>
+                <p class="lead">Find quick answers to common support questions.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="accordion" id="supportFaqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="supportHeadingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#supportCollapseOne" aria-expanded="true" aria-controls="supportCollapseOne">
+                                What do I do if Calcbot can't solve my problem?
+                            </button>
+                        </h2>
+                        <div id="supportCollapseOne" class="accordion-collapse collapse show" aria-labelledby="supportHeadingOne" data-bs-parent="#supportFaqAccordion">
+                            <div class="accordion-body">
+                                If Calcbot AI is unable to solve your problem, try reformulating it with clearer language or more specific mathematical notation. If it still doesn't work, please use the contact form above to send us the problem, and our team will look into it.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="supportHeadingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#supportCollapseTwo" aria-expanded="false" aria-controls="supportCollapseTwo">
+                                How can I report incorrect solutions?
+                            </button>
+                        </h2>
+                        <div id="supportCollapseTwo" class="accordion-collapse collapse" aria-labelledby="supportHeadingTwo" data-bs-parent="#supportFaqAccordion">
+                            <div class="accordion-body">
+                                We strive for accuracy, but if you believe Calcbot AI has provided an incorrect solution, please use the contact form to report the issue. Include the original problem and explain why you think the solution is incorrect. Your feedback helps us improve!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="supportHeadingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#supportCollapseThree" aria-expanded="false" aria-controls="supportCollapseThree">
+                                Can I suggest new features for Calcbot AI?
+                            </button>
+                        </h2>
+                        <div id="supportCollapseThree" class="accordion-collapse collapse" aria-labelledby="supportHeadingThree" data-bs-parent="#supportFaqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! We love hearing suggestions from our users. If you have ideas for new features or improvements, please share them through the contact form. We're constantly working to make Calcbot AI better and more useful for everyone.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

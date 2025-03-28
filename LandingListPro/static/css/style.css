@@ -1,0 +1,108 @@
+/* Custom styles for Calcbot AI */
+
+/* Math formula styling */
+.math-formula {
+    font-family: 'Cambria Math', 'STIX Two Math', serif;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* Input field for math problems */
+.math-input {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+}
+
+/* Solution display */
+.solution-display {
+    background-color: var(--bs-dark-bg-subtle);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 4px solid var(--bs-primary);
+}
+
+/* Loading animation */
+.loading-spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 0.25rem solid var(--bs-light);
+    border-right-color: var(--bs-primary);
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+/* Math-themed icons */
+.math-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--bs-primary);
+}
+
+/* Feature cards */
+.feature-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Example problem cards */
+.example-card {
+    background-color: var(--bs-dark-bg-subtle);
+    border-left: 4px solid var(--bs-info);
+}
+
+/* Hero section styling */
+.hero-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--bs-primary-bg-subtle) 0%, var(--bs-dark) 100%);
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .section-spacing {
+        padding: 2rem 0;
+    }
+}
+
+/* Section spacing */
+.section-spacing {
+    padding: 4rem 0;
+}
+
+/* Footer styling */
+.footer {
+    background-color: var(--bs-dark-bg-subtle);
+    padding: 2rem 0;
+}
+
+/* FAQ accordion customization */
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(--bs-primary);
+}
+
+/* Waitlist form styling */
+.waitlist-form {
+    background-color: var(--bs-dark-bg-subtle);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Animation for equation symbols */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-math-symbol {
+    animation: fadeIn 0.5s ease-in-out;
+}
