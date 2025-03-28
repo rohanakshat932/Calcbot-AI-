@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+
+{% block title %}Calcbot AI - Solve Math Problems Instantly{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-lg-start">
+                <h1 class="display-4 fw-bold mb-4">Solve Math Problems With AI</h1>
+                <p class="lead mb-4">
+                    Calcbot AI instantly solves algebra, calculus, geometry, and more with step-by-step explanations.
+                </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="#solve-section" class="btn btn-primary btn-lg px-4 me-md-2">Try It Now</a>
+                    <a href="#how-it-works" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <div class="p-4 bg-dark rounded shadow-lg text-center">
+                    <div class="mb-4">
+                        <span class="animated-math-symbol h1 mx-2 text-primary">∫</span>
+                        <span class="animated-math-symbol h1 mx-2 text-info">∑</span>
+                        <span class="animated-math-symbol h1 mx-2 text-success">√</span>
+                        <span class="animated-math-symbol h1 mx-2 text-warning">Δ</span>
+                        <span class="animated-math-symbol h1 mx-2 text-danger">π</span>
+                    </div>
+                    <p class="text-muted">Powered by advanced AI algorithms</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Problem Solving Section -->
+<section id="solve-section" class="section-spacing bg-dark">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Solve Your Math Problem</h2>
+                <p class="lead">Enter any math problem below and let Calcbot AI solve it for you.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-dark-subtle">
+                    <div class="card-body">
+                        <form id="problem-form" method="post">
+                            <div class="mb-3">
+                                <label for="problem-text" class="form-label">Enter your math problem:</label>
+                                <textarea id="problem-text" name="problem_text" class="form-control math-input" rows="3" placeholder="Example: Solve for x: 2x + 3 = 7"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="problem-type" class="form-label">Problem type (optional):</label>
+                                <select id="problem-type" name="problem_type" class="form-select">
+                                    <option value="general" selected>General</option>
+                                    <option value="algebra">Algebra</option>
+                                    <option value="calculus">Calculus</option>
+                                    <option value="geometry">Geometry</option>
+                                    <option value="trigonometry">Trigonometry</option>
+                                    <option value="statistics">Statistics & Probability</option>
+                                </select>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Solve</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="loading-spinner" class="text-center my-4 d-none">
+                    <div class="loading-spinner"></div>
+                    <p class="mt-2">Solving your problem...</p>
+                </div>
+                
+                <div id="solution-display" class="mt-4">
+                    <!-- Solution will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="section-spacing">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Features</h2>
+                <p class="lead">Calcbot AI can handle a wide range of math problems with precision and clarity.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="math-icon">
+                            <i class="fas fa-square-root-alt"></i>
+                        </div>
+                        <h4 class="card-title">Algebra</h4>
+                        <p class="card-text">Solve equations, systems of equations, factor expressions, and simplify complex algebraic problems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="math-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h4 class="card-title">Calculus</h4>
+                        <p class="card-text">Calculate derivatives, integrals, limits, and solve differential equations with step-by-step explanations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="math-icon">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <h4 class="card-title">Geometry</h4>
+                        <p class="card-text">Calculate areas, volumes, angles, and solve geometric problems for various shapes and figures.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="math-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <h4 class="card-title">Trigonometry</h4>
+                        <p class="card-text">Solve trigonometric equations, verify identities, and calculate values of trigonometric functions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="math-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4 class="card-title">Statistics</h4>
+                        <p class="card-text">Calculate probabilities, statistical measures, and analyze data sets with clear explanations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card feature-card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="math-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="card-title">Learning</h4>
+                        <p class="card-text">Get detailed step-by-step explanations to help you understand how to solve similar problems on your own.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="how-it-works" class="section-spacing bg-dark">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">How It Works</h2>
+                <p class="lead">Calcbot AI uses advanced algorithms to understand and solve your math problems in seconds.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-3 text-primary">1</div>
+                        <h4 class="mb-3">Enter Your Problem</h4>
+                        <p>Type in any math problem using standard notation or upload an image of your problem.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-3 text-primary">2</div>
+                        <h4 class="mb-3">AI Analysis</h4>
+                        <p>Our AI engine analyzes your problem to determine the most efficient solving method.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-3 text-primary">3</div>
+                        <h4 class="mb-3">Problem Solving</h4>
+                        <p>Advanced mathematical algorithms solve your problem with precision and accuracy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-dark-subtle h-100">
+                    <div class="card-body text-center">
+                        <div class="display-4 mb-3 text-primary">4</div>
+                        <h4 class="mb-3">Get Results</h4>
+                        <p>Receive your answer with step-by-step explanations to help you understand the solution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Examples Section -->
+<section id="examples" class="section-spacing">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Example Problems</h2>
+                <p class="lead">Here are some examples of math problems Calcbot AI can solve.</p>
+            </div>
+        </div>
+        <div class="row" id="examples-container">
+            <!-- Example problems will be loaded here via JavaScript -->
+            <div class="col-12 text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading examples...</span>
+                </div>
+                <p class="mt-2">Loading example problems...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Waitlist Section -->
+<section class="section-spacing bg-dark">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Join Our Waitlist</h2>
+                <p class="lead mb-4">Be the first to get access to Calcbot AI when we launch our full version with more advanced features.</p>
+                <div class="waitlist-form">
+                    <form id="waitlist-form-main" action="{{ url_for('join_waitlist') }}" method="POST">
+                        <div class="input-group">
+                            <input type="email" name="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                            <button class="btn btn-primary btn-lg" type="submit">Join Waitlist</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="section-spacing">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Frequently Asked Questions</h2>
+                <p class="lead">Get answers to common questions about Calcbot AI.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What types of math problems can Calcbot AI solve?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Calcbot AI can solve a wide range of math problems including algebra, calculus, geometry, trigonometry, statistics, and more. It can handle equations, derivatives, integrals, limits, geometric calculations, and statistical analysis.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How accurate are the solutions?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Calcbot AI is designed to provide highly accurate solutions using advanced mathematical algorithms. However, like all automated systems, it may occasionally have limitations with extremely complex or unusual problems. We're constantly improving our algorithms for better accuracy.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Is Calcbot AI free to use?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Calcbot AI currently offers a free version with limited features. We're developing a premium version with more advanced capabilities, step-by-step explanations, and unlimited problem solving. Join our waitlist to be notified when we launch our full version.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                How should I format my math problems?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You can enter problems using standard math notation. For example, use * for multiplication, / for division, ^ for exponents, sqrt() for square roots, etc. Be as clear as possible in your problem statement. For example, "Solve for x: 2x + 3 = 7" or "Find the derivative of x^2 + 3x - 2".
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Can Calcbot AI show step-by-step solutions?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, one of the main features of Calcbot AI is providing step-by-step explanations for how problems are solved. This helps users understand the solution process and learn how to solve similar problems on their own.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
